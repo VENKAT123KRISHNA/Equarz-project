@@ -1,0 +1,11 @@
+browser=chrome
+url=http://e-quarz.com/admin/auth/login
+Email=arun@marolix.com
+Password=Reset@123
+
+url1=http://e-quarz.com/customer/auth/login
+Email1=krishna.venkay123@gmail.com
+Password1=Equarz@123
+searchbox=camera
+
+url2=http://e-quarz.com/customer/auth/sign-up

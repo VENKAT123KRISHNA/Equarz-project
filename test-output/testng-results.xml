@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-09-26T16:26:43 IST" name="Default suite" finished-at="2023-09-26T16:27:17 IST" duration-ms="34113">
+    <groups>
+    </groups>
+    <test started-at="2023-09-26T16:26:43 IST" name="Default test" finished-at="2023-09-26T16:27:17 IST" duration-ms="34113">
+      <class name="com.Equarztestcase.homelinkspage">
+        <test-method is-config="true" signature="links()[pri:0, instance:com.Equarztestcase.homelinkspage@815b41f]" started-at="2023-09-26T16:26:43 IST" name="links" finished-at="2023-09-26T16:27:15 IST" duration-ms="32056" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- links -->
+        <test-method signature="suporttickts()[pri:10, instance:com.Equarztestcase.homelinkspage@815b41f]" started-at="2023-09-26T16:27:15 IST" name="suporttickts" finished-at="2023-09-26T16:27:17 IST" duration-ms="1822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- suporttickts -->
+        <test-method is-config="true" signature="alllink()[pri:0, instance:com.Equarztestcase.homelinkspage@815b41f]" started-at="2023-09-26T16:27:17 IST" name="alllink" finished-at="2023-09-26T16:27:17 IST" duration-ms="153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- alllink -->
+      </class> <!-- com.Equarztestcase.homelinkspage -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
