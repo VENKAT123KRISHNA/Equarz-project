@@ -5,7 +5,7 @@
     <classes>
       <class name="com.Equarztestcase.addresspage">
         <methods>
-          <include name="validateaddress" invocation-numbers="0"/>
+          <include name="editsaddress"/>
           <include name="intialize"/>
         </methods>
       </class> <!-- com.Equarztestcase.addresspage -->

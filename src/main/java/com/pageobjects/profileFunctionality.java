@@ -18,5 +18,7 @@ public class profileFunctionality extends Testbase{
 	
 	@FindBy(css = "[class='navbar-tool-text']")
 	WebElement dashboard;
+	@FindBy(linkText = "//a[text()=' My profile']")
+	WebElement profilebtn;
 
 }

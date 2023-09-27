@@ -1,10 +1,16 @@
 package com.pageobjects;
 
-import org.openqa.selenium.WebDriver;
+import java.util.Iterator;
+import java.util.List;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver; 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import com.Base.Testbase;
 
@@ -39,16 +45,28 @@ public class Addressfunctionality extends Testbase{
 	WebElement countrybox;
 	@FindBy(css = "[role='textbox']")
 	WebElement searchbox;
-	@FindBy(linkText = "//span[text()='India']")
-	WebElement indianame;
+	@FindBy(css = "[class=' bs-ok-default check-mark']")
+	List<WebElement> indianame;
 	@FindBy(id = "address")
 	WebElement addressbox;
-	@FindBy(linkText = "//button[text()='Add Informations  ']")
+	@FindBy(xpath = "(//button[@class='btn btn--primary'])[1]")
 	WebElement addinfobtn;
 	@FindBy(linkText = "(//button[text()='Close'])[1]")
 	WebElement closebtn;
+	
 	@FindBy(id = "edit")
 	WebElement editbtn;
+	@FindBy(id = "person_name")
+	WebElement editname;
+	@FindBy(id = "own_phone")
+	WebElement editphone;
+	@FindBy(id = "city")
+	WebElement editcity;
+	@FindBy(css = "[class='btn btn--primary']")
+	WebElement updatebtn;
+	@FindBy(css = "[class='closeB btn btn-secondary']")
+	WebElement editclosebtn;
+	
 	@FindBy(id = "delete")
 	WebElement deletebtn;
 	
@@ -77,30 +95,49 @@ public class Addressfunctionality extends Testbase{
 	public   void validaddress(String name,String phone,String city,String zip,String country,String address) throws Throwable  {
 		
 		Addnewaddressbtn.click();
-		contactnamebox.sendKeys("name");
-		phonenumberbox.sendKeys("phone");
-		citybox.sendKeys("city");
-		zipcodebox.sendKeys("zip");
+		contactnamebox.sendKeys(name);
+		phonenumberbox.sendKeys(phone);
+		citybox.sendKeys(city);
+		zipcodebox.sendKeys(zip);
 		countrybox.click();
-		searchbox.sendKeys("country");
-		indianame.click();
-		 addressbox.sendKeys("address");
+		searchbox.sendKeys(country);
+		
+		for(WebElement india:indianame)
+			
+		if(india.getText().contains("india")) {
+				
+			
+		india.click();
+		}
+		 addressbox.sendKeys(address);
 		 addinfobtn.click();
 		 //closebtn.click();
-		
+		Alert al=driver.switchTo().alert();
+		al.dismiss();
 		
 	}
  
-	public void editaddress() {
+	public void editaddress() throws Exception {
 		
-		
+		//Actions ac
 		editbtn.click();
-		
+		Thread.sleep(4000);
+		editname.sendKeys(Keys.CONTROL,"a",Keys.BACK_SPACE);
+		editname.sendKeys("venkat");
+		editphone.sendKeys(Keys.CONTROL,"a",Keys.BACK_SPACE);
+		editphone.sendKeys("7788223344"); 
+		editcity.sendKeys(Keys.CONTROL,"a",Keys.BACK_SPACE);
+		editcity.sendKeys("guntur"); 
+		 updatebtn.click();
+		 editclosebtn.click();
 	}
 
 
    public void deletaddress() {
 	   deletebtn.click();
+	   Alert al=driver.switchTo().alert();
+	   al.accept();
+	   //deletebtn.sendKeys(Keys.ENTER);
 	   
 	   
 	   
