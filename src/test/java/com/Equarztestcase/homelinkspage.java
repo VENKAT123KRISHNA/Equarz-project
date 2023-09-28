@@ -100,8 +100,18 @@ public class homelinkspage extends Testbase{
 	 
  }
  
- 
- 
+ public void termconditions() {
+	 hl.conditions();
+	 String url=driver.getCurrentUrl();
+		Assert.assertEquals("http://e-quarz.com/terms", url);
+	 
+ }
+ public void privpolicy() {
+	 hl.privpolicys();
+	 String url=driver.getCurrentUrl();
+		Assert.assertEquals("http://e-quarz.com/privacy-policy", url);
+	 
+ }
  
  @AfterMethod
  public void alllink() {

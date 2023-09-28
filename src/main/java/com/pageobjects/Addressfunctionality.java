@@ -1,6 +1,6 @@
 package com.pageobjects;
 
-import java.util.Iterator;
+import java.util.Iterator; 
 import java.util.List;
 
 import org.openqa.selenium.Alert;
@@ -119,7 +119,7 @@ public class Addressfunctionality extends Testbase{
  
 	public void editaddress() throws Exception {
 		
-		//Actions ac
+		
 		editbtn.click();
 		Thread.sleep(4000);
 		editname.sendKeys(Keys.CONTROL,"a",Keys.BACK_SPACE);

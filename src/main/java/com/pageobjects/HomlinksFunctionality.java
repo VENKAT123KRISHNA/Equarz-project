@@ -41,6 +41,10 @@ public class HomlinksFunctionality extends Testbase{
 	WebElement cancelpolicy;
 	@FindBy(css = "[href='http://e-quarz.com/account-tickets']")
 	WebElement suporticket;
+	@FindBy(css = "[href='http://e-quarz.com/terms']")
+	WebElement termsbtn;
+	@FindBy(css = "[href='http://e-quarz.com/privacy-policy']")
+	WebElement privacypolicy;
 	
 	public HomlinksFunctionality(WebDriver driver) {
 		PageFactory.initElements(driver,this );
@@ -89,6 +93,16 @@ public class HomlinksFunctionality extends Testbase{
     public void suportsticket() {
     	suporticket.click();
     }
-     
-     
+    public void conditions() {
+    	termsbtn.click();
+    
+    }
+
+    public void privpolicys() {
+    	privacypolicy.click();
+    
+
+    }
 }
+
+
