@@ -1,6 +1,6 @@
 package com.pageobjects;
 
-import java.util.Iterator; 
+import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.Alert;
@@ -45,13 +45,13 @@ public class Addressfunctionality extends Testbase{
 	WebElement countrybox;
 	@FindBy(css = "[role='textbox']")
 	WebElement searchbox;
-	@FindBy(css = "[class=' bs-ok-default check-mark']")
-	List<WebElement> indianame;
+	@FindBy(xpath = "//span[text()='India']")
+     WebElement indianame;
 	@FindBy(id = "address")
 	WebElement addressbox;
-	@FindBy(xpath = "(//button[@class='btn btn--primary'])[1]")
+	@FindBy(xpath = "//button[text()='Add Informations  ']")
 	WebElement addinfobtn;
-	@FindBy(linkText = "(//button[text()='Close'])[1]")
+	@FindBy(xpath = "//button[text()='Close']")
 	WebElement closebtn;
 	
 	@FindBy(id = "edit")
@@ -62,7 +62,7 @@ public class Addressfunctionality extends Testbase{
 	WebElement editphone;
 	@FindBy(id = "city")
 	WebElement editcity;
-	@FindBy(css = "[class='btn btn--primary']")
+	@FindBy(xpath = "//button[text()='Add Informations  ']")
 	WebElement updatebtn;
 	@FindBy(css = "[class='closeB btn btn-secondary']")
 	WebElement editclosebtn;
@@ -102,14 +102,17 @@ public class Addressfunctionality extends Testbase{
 		countrybox.click();
 		searchbox.sendKeys(country);
 		
-		for(WebElement india:indianame)
+		//for(WebElement india:indianame)
 			
-		if(india.getText().contains("india")) {
-				
+		//if(india.getText().contains("india")) {
+			Thread.sleep(2000);	
 			
-		india.click();
-		}
+		indianame.click();
+		//}
 		 addressbox.sendKeys(address);
+		 
+		 Thread.sleep(3000);
+		 
 		 addinfobtn.click();
 		 //closebtn.click();
 		Alert al=driver.switchTo().alert();
