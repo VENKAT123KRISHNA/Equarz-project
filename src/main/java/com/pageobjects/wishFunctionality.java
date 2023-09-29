@@ -1,7 +1,8 @@
 package com.pageobjects;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver; 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -21,36 +22,32 @@ public class wishFunctionality extends Testbase{
 	WebElement nikeproduct;
 	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-22-64940eefdea93.png']")
 	WebElement nikeshoe;
-	@FindBy(css ="[class='btn __text-18px text-danger']")
-	WebElement wishbttns;
+	
 	
 	@FindBy(xpath = "//input[@class='form-control appended-form-control search-bar-input']")
 	WebElement searchbox;
 	@FindBy(xpath ="(//span[@class='input-group-text __text-20px'])[1]")
 	WebElement searchbttn;
-	@FindBy(xpath = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-64953e5855be3.png']")
-	WebElement fujiCAMERAproduct;
-	@FindBy(css ="[class='fa fa-heart-o ']")
-	WebElement wishbttn;
+	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-64953f2d2a1eb.png']")
+	WebElement sonyalphacam;
+	
 	
 
 	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/banner/2023-07-21-64ba5d6aa14b4.png']")
 	WebElement promobtn;
-	@FindBy(xpath = "(//a[@href='http://e-quarz.com/product/jodhpuri-blazer-for-men-black-formal-casual-svSGUX'])[1]")
+	@FindBy(css =   "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-64954c5de6998.png']")
 	WebElement blazer;
+	
+	
+	@FindBy(xpath =   "(//span[text()='Electronics'])[1]")
+	WebElement electronics;
+	@FindBy(xpath  = "//span[text()='Cameras']")
+	WebElement camera;
+	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-64953e2446e92.png']")
+	WebElement canonEOScam;
+	
 	@FindBy(css = "[class='fa fa-heart-o ']")
 	WebElement wishbtn;
-	
-	@FindBy(linkText = "(//span[text()='Categories'])[1]")
-	WebElement categorybtn;
-	@FindBy(linkText = "(//span[text()='Electronics'])[1]")
-	WebElement electronics;
-	@FindBy(linkText = "(//span[text()='Cameras'])[1]")
-	WebElement cameras;
-	@FindBy(xpath = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-64953e5855be3.png']")
-	WebElement fujcam;
-	@FindBy(css = "[class='fa fa-heart-o ']")
-	WebElement wishbn;
 	
 	public wishFunctionality(WebDriver driver) {
 		PageFactory.initElements(driver,this );
@@ -61,7 +58,7 @@ public class wishFunctionality extends Testbase{
 			
 			nikeproduct.click();
 			nikeshoe.click();
-			wishbttns.click();
+			wishbtn.click();
 			
 			  return new Hompage();
 			  
@@ -71,8 +68,8 @@ public void productsearch() throws Exception {
 	signbttn.click();
 	searchbox.sendKeys(props.getProperty("searchbox"));
 	searchbttn.click();
-	fujiCAMERAproduct.click();
-	wishbttn.click();
+	sonyalphacam.click();
+	wishbtn.click();
 
 	}
 	
@@ -85,11 +82,11 @@ public void productsearch() throws Exception {
     
     public void categoryproducts() {
     	
-    	 categorybtn.click();
-    	 electronics.click();
-    	 cameras.click();
-    	 fujcam.click();
-    	 wishbn.click();
+    	Actions ac=new Actions (driver);
+		ac.moveToElement(electronics).build().perform();
+		camera.click();
+		canonEOScam.click();
+    	 wishbtn.click();
     	 
     	 
     	

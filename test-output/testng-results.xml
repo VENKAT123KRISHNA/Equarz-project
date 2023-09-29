@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-28T11:38:45 IST" name="Default suite" finished-at="2023-09-28T11:40:31 IST" duration-ms="106009">
+  <suite started-at="2023-09-29T14:44:27 IST" name="Default suite" finished-at="2023-09-29T14:45:03 IST" duration-ms="35518">
     <groups>
     </groups>
-    <test started-at="2023-09-28T11:38:45 IST" name="Default test" finished-at="2023-09-28T11:40:31 IST" duration-ms="106009">
-      <class name="com.Equarztestcase.logoutpage">
-        <test-method is-config="true" signature="intialize()[pri:0, instance:com.Equarztestcase.logoutpage@22ff4249]" started-at="2023-09-28T11:38:45 IST" name="intialize" finished-at="2023-09-28T11:39:55 IST" duration-ms="69480" status="PASS">
+    <test started-at="2023-09-29T14:44:27 IST" name="Default test" finished-at="2023-09-29T14:45:03 IST" duration-ms="35518">
+      <class name="com.Equarztestcase.cartpage">
+        <test-method is-config="true" signature="cart()[pri:0, instance:com.Equarztestcase.cartpage@5b12b668]" started-at="2023-09-29T14:44:27 IST" name="cart" finished-at="2023-09-29T14:44:57 IST" duration-ms="30117" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- intialize -->
-        <test-method signature="logout()[pri:0, instance:com.Equarztestcase.logoutpage@22ff4249]" started-at="2023-09-28T11:39:55 IST" name="logout" finished-at="2023-09-28T11:40:31 IST" duration-ms="36122" status="PASS">
+        </test-method> <!-- cart -->
+        <test-method signature="wishlistproducts()[pri:5, instance:com.Equarztestcase.cartpage@5b12b668]" started-at="2023-09-29T14:44:57 IST" name="wishlistproducts" finished-at="2023-09-29T14:45:02 IST" duration-ms="5181" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="out()[pri:0, instance:com.Equarztestcase.logoutpage@22ff4249]" started-at="2023-09-28T11:40:31 IST" name="out" finished-at="2023-09-28T11:40:31 IST" duration-ms="330" status="PASS">
+        </test-method> <!-- wishlistproducts -->
+        <test-method is-config="true" signature="PRODUCTS()[pri:0, instance:com.Equarztestcase.cartpage@5b12b668]" started-at="2023-09-29T14:45:02 IST" name="PRODUCTS" finished-at="2023-09-29T14:45:03 IST" duration-ms="147" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- out -->
-      </class> <!-- com.Equarztestcase.logoutpage -->
+        </test-method> <!-- PRODUCTS -->
+      </class> <!-- com.Equarztestcase.cartpage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

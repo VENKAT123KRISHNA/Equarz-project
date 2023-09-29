@@ -30,7 +30,7 @@ public class Buypage extends Testbase{
 	}
 
 	@Test(priority=1)
-	public void banerproducts() {
+	public void banerproducts() throws Exception {
 		cf.bannerproducts();
 		}
 	
@@ -39,7 +39,7 @@ public class Buypage extends Testbase{
 		cf.homeproducts();
 		}
 	@Test(priority=3)
-	public void CategoryProducts() {
+	public void CategoryProducts() throws Exception {
 		cf.categeryproducts();
 	}
    

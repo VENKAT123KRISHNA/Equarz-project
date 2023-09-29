@@ -1,6 +1,6 @@
 package com.pageobjects;
 
-import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -22,36 +22,35 @@ public class cartFunctionality extends Testbase {
 	WebElement searchbox;
 	@FindBy(xpath ="(//span[@class='input-group-text __text-20px'])[1]")
 	WebElement searchbttn;
-	@FindBy(xpath = "//img[@src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-64953e2446e92.png']")
-	WebElement CAMERAproduct;
-	@FindBy(css ="[onclick='addToCart()']")
-	WebElement cartbox;
+	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-649541e3e319e.png']")
+	WebElement pansonicCam;
 	
-	@FindBy(linkText = "(//span[text()='Categories'])[1]")
-	WebElement categorybtn;
-	@FindBy(linkText = "(//span[text()='Electronics'])[1]")
+	@FindBy(xpath =   "(//span[text()='Electronics'])[1]")
 	WebElement electronics;
-	@FindBy(linkText = "(//span[text()='Cameras'])[1]")
-	WebElement cameras;
-	@FindBy(xpath = "(//a[@href='http://e-quarz.com/product/fujifilm-x-t5-mirrorless-camera-with-18-55mm-lens-silver-24uZ7t'])[1]")
-	WebElement fujcam;
-	@FindBy(css = "[onclick='buy_now()']")
-	WebElement buysbtn;
+	@FindBy(xpath  = "//span[text()='Cameras']")
+	WebElement camera;
+	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-64953e2446e92.png']")
+	WebElement canonEOScam;
 	
 	@FindBy(css ="[alt='Nike']")
 	WebElement nikeproduct;
 	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-22-64946b6ddb4d7.png']")
 	WebElement nikeshoe;
-	@FindBy(linkText = "//span[text()='Buy now']")
-	WebElement Buybtn;
+	
 	
 	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/banner/2023-07-21-64ba5d6aa14b4.png']")
 	WebElement promobtn;
-	@FindBy(xpath = "(//a[@href='http://e-quarz.com/product/jodhpuri-blazer-for-men-black-formal-casual-svSGUX'])[1]")
+	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-6495491569cb4.png']")
 	WebElement blazer;
-	@FindBy(css = "[class='btn btn-secondary element-center __iniline-26 btn-gap-right']")
-	WebElement buybttn;
 	
+	
+	@FindBy(css = "[href='http://e-quarz.com/wishlists']")
+	WebElement wishbox;
+	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-6495427bae9fd.png']")
+	WebElement wildcrafbag;
+	
+	@FindBy(css = "[onclick='addToCart()']")
+	WebElement addcartbtn;
 	
 
 	public cartFunctionality(WebDriver driver) {
@@ -61,35 +60,40 @@ public class cartFunctionality extends Testbase {
 	}
 	public Hompage searchproducts() throws Exception {
 		
-		signbttn.click();
+		
 		searchbox.sendKeys(props.getProperty("searchbox"));
 		searchbttn.click();
-		CAMERAproduct.click();
-		cartbox.click();
+		pansonicCam.click();
+		 addcartbtn.click();
 	    return new Hompage();
 	}	
 	public void categeryproducts() {
-		categorybtn.click();
+		
 		Actions ac=new Actions (driver);
 		ac.moveToElement(electronics).build().perform();
-		cameras.click();
-		fujcam.click();
-		 buysbtn.click();
+		camera.click();
+		canonEOScam.click();
+		 addcartbtn.click();
      
 	}
 	public void homeproducts() {
 		nikeproduct.click();
 		nikeshoe.click();
-		Buybtn.click();
+		addcartbtn.click();
 	}
 
 	public Hompage bannerproducts() {
 		promobtn.click();
 		blazer.click();
-		buybttn.click();
+		addcartbtn.click();
 		return new Hompage();
 }
-	
+
+	public void wishproducts() {
+		wishbox.click();
+		wildcrafbag.click();
+		addcartbtn.click();
+	}
 	
 
 }
