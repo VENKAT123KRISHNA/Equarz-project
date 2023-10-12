@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.Equarztestcase.signup2page"/>
+      <class name="com.Equarztestcase.homelinkspage"/>
+      <class name="com.Equarztestcase.logoutpage"/>
+      <class name="com.Equarztestcase.cartpage"/>
+      <class name="com.Equarztestcase.searchpage"/>
+      <class name="com.Equarztestcase.addresspage"/>
+      <class name="com.Equarztestcase.signuppage"/>
+      <class name="com.Equarztestcase.profilepage"/>
+      <class name="com.Equarztestcase.Buypage"/>
+      <class name="com.Equarztestcase.signinpage"/>
+      <class name="com.Equarztestcase.wishpage"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
