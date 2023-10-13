@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Equarztestcase.addresspage">
+      <class name="com.Equarztestcase.profilepage">
         <methods>
+          <include name="image"/>
           <include name="intialize"/>
-          <include name="Addaddress" invocation-numbers="0"/>
-          <include name="close"/>
         </methods>
-      </class> <!-- com.Equarztestcase.addresspage -->
+      </class> <!-- com.Equarztestcase.profilepage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

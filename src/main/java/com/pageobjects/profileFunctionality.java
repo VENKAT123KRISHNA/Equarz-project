@@ -77,18 +77,16 @@ public class profileFunctionality extends Testbase{
 	  
 	  Robot rb=new Robot();
 	  rb.delay(3000);
-	  StringSelection ss=new StringSelection("C:\\Users\\LENOVO\\Pictures\\Screenshots");
+	  StringSelection ss=new StringSelection("\"C:\\Users\\LENOVO\\Pictures\\images\\camera.jpg\"");
 	  Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
 	  
 	  rb.keyPress(KeyEvent.VK_CONTROL);
 	  rb.keyPress(KeyEvent.VK_V);
-	  rb.delay(2000);
-	  
 	  rb.keyRelease(KeyEvent.VK_CONTROL);
 	  rb.keyRelease(KeyEvent.VK_V);
 	  rb.delay(2000);
-	  
 	  rb.keyPress(KeyEvent.VK_ENTER);
+	  rb.delay(2000);
 	  rb.keyRelease(KeyEvent.VK_ENTER);
 	  
 	  updatebtn.click();

@@ -3,18 +3,27 @@ package com.Equarztestcase;
 import org.testng.Assert; 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.Base.Testbase;
 import com.pageobjects.Addressfunctionality;
 import com.pageobjects.signinFunctionality;
 import com.utils.signuputils;
+import com.utils.sognup2tUtils;
 
 public class addresspage  extends Testbase{
 	
 	Addressfunctionality as;
 	signinFunctionality sf;
 	
+	public final String sheetName="address";
+	
+	@DataProvider
+	public String[][] NewAddress() throws Exception{
+		return sognup2tUtils.signupdata(sheetName) ;
+		
+	}
 	public addresspage() {
 		super();
 	}
@@ -26,7 +35,7 @@ public class addresspage  extends Testbase{
 		as=new Addressfunctionality(driver);
 		as.Addrespage();
 	}
-	@Test(priority=1,dataProvider="signupdata",dataProviderClass=signuputils.class)
+	@Test(priority=1,dataProvider="NewAddress",dataProviderClass=addresspage.class)
 	public void Addaddress(String name,String phone,String city,String zip,String country,String address) throws Throwable {
 		as.validaddress(name,phone,city,zip,country,address);
 		String url=driver.getCurrentUrl();
