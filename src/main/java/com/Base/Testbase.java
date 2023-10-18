@@ -5,17 +5,25 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import com.utils.Exceptionslistners;
 
 public class Testbase {
+	
+	
 	
 	 FileInputStream file;
 	 public static Properties props;
      public static WebDriver driver;
+     
+	public static EventFiringWebDriver edriver;
 	
 	public Testbase() {
 		 props=new Properties();
@@ -33,7 +41,8 @@ public class Testbase {
 			e.printStackTrace();
 		}
 	}
-	public void setup() {
+	public void setup(EventFiringWebDriver e_driver, Exceptionslistners listenerss) {
+		
 		String browsername=props.getProperty("browser");
 		if(browsername.equalsIgnoreCase("chrome")){
 	     driver=new ChromeDriver();
@@ -45,10 +54,19 @@ public class Testbase {
 			 driver=new FirefoxDriver();
 		}
 		
+		e_driver=new EventFiringWebDriver(driver);
+		listenerss=new Exceptionslistners();
+		e_driver.register(listenerss);
+		driver=e_driver;
+
 		driver.manage().window().maximize();
 		driver.get(props.getProperty("url1"));
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
 		
+		
+	}
+	public void onException(Throwable throwable, WebDriver driver, String error) {
+		// TODO Auto-generated method stub
 		
 	}
 }

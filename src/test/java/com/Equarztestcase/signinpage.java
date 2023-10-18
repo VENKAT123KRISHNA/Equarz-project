@@ -1,6 +1,6 @@
 package com.Equarztestcase;
 
-import org.testng.Assert;
+import org.testng.Assert; 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -22,7 +22,7 @@ signinFunctionality sg;
 	}
 	@Test(priority=1)
 	public void verifyLogin() throws Exception {
-		sg.validatesignin();
+		sg.validatesignin(null, null);
 		String url=driver.getCurrentUrl();
 		Assert.assertEquals("http://e-quarz.com/",url);
 		
