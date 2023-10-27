@@ -40,7 +40,7 @@ public class cartFunctionality extends Testbase {
 	
 	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/banner/2023-07-21-64ba5d6aa14b4.png']")
 	WebElement promobtn;
-	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-6495491569cb4.png']")
+	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-64952e6f99ce6.png']")
 	WebElement blazer;
 	
 	
@@ -49,7 +49,7 @@ public class cartFunctionality extends Testbase {
 	@FindBy(css = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-6495427bae9fd.png']")
 	WebElement wildcrafbag;
 	
-	@FindBy(css = "[onclick='addToCart()']")
+	@FindBy(css = "[onclick='addToCartv()']")
 	WebElement addcartbtn;
 	
 

@@ -1,6 +1,6 @@
 package com.utils;
 
-import java.io.File;
+import java.io.File; 
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
@@ -21,7 +21,7 @@ public class Screenshots extends Testbase{
 
 	
 		
-	
+	 
 
 		
 }

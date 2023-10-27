@@ -1,6 +1,6 @@
 package com.Base;
 
-import java.io.FileInputStream;
+import java.io.FileInputStream; 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
@@ -23,7 +23,9 @@ public class Testbase {
 	 public static Properties props;
      public static WebDriver driver;
      
-	public static EventFiringWebDriver edriver;
+	public static EventFiringWebDriver e_driver;
+	Exceptionslistners listenerss;
+  
 	
 	public Testbase() {
 		 props=new Properties();
@@ -39,12 +41,15 @@ public class Testbase {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+ 		}
 	}
-	public void setup(EventFiringWebDriver e_driver, Exceptionslistners listenerss) {
-		
+	public void setup() {
+ 		
 		String browsername=props.getProperty("browser");
 		if(browsername.equalsIgnoreCase("chrome")){
+			
+System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");		
+			
 	     driver=new ChromeDriver();
 	}
 		else if(browsername.equalsIgnoreCase("edge")) {
@@ -65,10 +70,7 @@ public class Testbase {
 		
 		
 	}
-	public void onException(Throwable throwable, WebDriver driver, String error) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
 
 
