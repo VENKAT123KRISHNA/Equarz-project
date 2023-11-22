@@ -1,6 +1,6 @@
 package com.Base;
 
-import java.io.FileInputStream; 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
@@ -16,15 +16,15 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import com.utils.Exceptionslistners;
 
 public class Testbase {
-	
+	//public static void main(String[] args) {
 	
 	
 	 FileInputStream file;
 	 public static Properties props;
      public static WebDriver driver;
      
-	public static EventFiringWebDriver e_driver;
-	Exceptionslistners listenerss;
+	//public static EventFiringWebDriver e_driver;
+	//Exceptionslistners listenerss;
   
 	
 	public Testbase() {
@@ -47,8 +47,7 @@ public class Testbase {
  		
 		String browsername=props.getProperty("browser");
 		if(browsername.equalsIgnoreCase("chrome")){
-			
-System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");		
+System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chromedriver-win32(119 versn)\\chromedriver.exe");		
 			
 	     driver=new ChromeDriver();
 	}
@@ -59,10 +58,10 @@ System.setProperty("webdriver.chrome.driver","C:\\Users\\LENOVO\\Downloads\\chro
 			 driver=new FirefoxDriver();
 		}
 		
-		e_driver=new EventFiringWebDriver(driver);
-		listenerss=new Exceptionslistners();
-		e_driver.register(listenerss);
-		driver=e_driver;
+//		e_driver=new EventFiringWebDriver(driver);
+//		listenerss=new Exceptionslistners();
+//		e_driver.register(listenerss);
+//		driver=e_driver;
 
 		driver.manage().window().maximize();
 		driver.get(props.getProperty("url1"));

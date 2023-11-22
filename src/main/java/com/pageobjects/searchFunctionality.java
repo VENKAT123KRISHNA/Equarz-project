@@ -22,7 +22,7 @@ public class searchFunctionality extends Testbase {
 	WebElement searchbttn;
 	@FindBy(xpath = "[src='http://e-quarz.com/storage/app/public/product/thumbnail/2023-06-23-64953e5855be3.png']")
 	WebElement fujcam;
-	@FindBy(linkText ="//span[text()='Buy now']")
+	@FindBy(xpath ="//span[text()='Buy now']")
 	WebElement buybtn;
 
 	public searchFunctionality(WebDriver driver) {
